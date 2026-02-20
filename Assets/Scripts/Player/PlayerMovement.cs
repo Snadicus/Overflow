@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     JumpState jumpState = JumpState.grounded;
     int timesJumped = 0;
 
+    public delegate void JumpDelegate();
+    public event JumpDelegate OnDoubleJump;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,11 +40,19 @@ public class PlayerMovement : MonoBehaviour
         if(moveDirection != 0f)
         {
             playerRB.linearVelocity = playerDirection;
+            FlipCharacter(moveDirection);
         }
         else
         {
             playerRB.linearVelocity = new Vector2(0f, playerRB.linearVelocity.y);
         }
+    }
+
+    void FlipCharacter(float moveDirection)
+    {
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Sign(moveDirection) * -1; // 1 or -1
+        transform.localScale = scale;
     }
 
     void Jump()
@@ -54,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
         
         playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
         AddToJumpState();
+
+        if(jumpState == JumpState.doubleJumping)
+        {
+            OnDoubleJump?.Invoke();
+        }
     }
     #endregion
 

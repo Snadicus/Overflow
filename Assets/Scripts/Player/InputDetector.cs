@@ -41,7 +41,7 @@ public class InputDetector : MonoBehaviour
 
         interact = playerControls.Player.Interact;
         interact.Enable();
-        interact.performed += Interact;
+        interact.started += Interact;
 
         //pause = playerControls.Player.Pause;
         //pause.Enable();
@@ -88,7 +88,6 @@ public class InputDetector : MonoBehaviour
     // Notifier for interact button
     public void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("Interact button hit.");
         OnInteract?.Invoke();
     }
 
