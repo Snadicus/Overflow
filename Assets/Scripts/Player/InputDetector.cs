@@ -88,6 +88,7 @@ public class InputDetector : MonoBehaviour
     // Notifier for interact button
     public void Interact(InputAction.CallbackContext context)
     {
+        Debug.Log("Interact button hit.");
         OnInteract?.Invoke();
     }
 
