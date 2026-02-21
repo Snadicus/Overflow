@@ -31,4 +31,9 @@ public class CoinSpawn : MonoBehaviour
         // Set the velocity based on the random direction and desired speed
         RB.linearVelocity = RandomDirection * Speed;
     }
+
+    void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 }

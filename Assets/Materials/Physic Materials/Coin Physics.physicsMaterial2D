@@ -9,6 +9,6 @@ PhysicsMaterial2D:
   m_Name: Coin Physics
   serializedVersion: 2
   friction: 0.4
-  bounciness: 0.75
-  m_FrictionCombine: 1
+  bounciness: 0.25
+  m_FrictionCombine: 4
   m_BounceCombine: 4

@@ -5,19 +5,23 @@ public class CoinCreator : MonoBehaviour
     // Variables
 
     // Floats
-    private float PlayerXPosition;
-    private float PlayerYPosition;
+    //private float PlayerXPosition;
+    //private float PlayerYPosition;
 
     // GameObject Variables
-    private GameObject PlayerObj = null; // For collecting player positon
-    public GameObject Coin = null; // For the coin prefab
+    [SerializeField] MoneyThrowing moneyThrowing;
+    [SerializeField] GameObject Coin; // For the coin prefab
+    [Space(20)]
+    [SerializeField] int coinsToSpawnAtOnce = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LocatePlayer();
+        //LocatePlayer();
+        moneyThrowing.OnThrowMoney += SpawnCoin;
     }
-
+    
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -38,17 +42,19 @@ public class CoinCreator : MonoBehaviour
             Coin = GameObject.Find("Coin");
         }
     }
+    */
     
     private void SpawnCoin()
     {
         // Records player location for testing
-        Debug.Log("Player Position: X = " + PlayerObj.transform.position.x + " --- Y = " + PlayerObj.transform.position.y);
+        //Debug.Log("X: " + transform.position.x + " --- Y = " + transform.position.y);
 
         // Gets exact player location so the coins can spawn in the right place
-        PlayerXPosition = PlayerObj.transform.position.x;
-        PlayerYPosition = PlayerObj.transform.position.y;
+        //PlayerXPosition = PlayerObj.transform.position.x;
+        //PlayerYPosition = PlayerObj.transform.position.y;
 
-        Instantiate(Coin, new Vector2(PlayerXPosition, PlayerYPosition), Quaternion.identity);
+        for(int i = 0; i < coinsToSpawnAtOnce; ++i)
+            Instantiate(Coin, moneyThrowing.gameObject.transform.position, Quaternion.identity);
     }
 
 }
