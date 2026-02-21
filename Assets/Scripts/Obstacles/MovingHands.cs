@@ -6,7 +6,7 @@ public class MovingHands : MonoBehaviour
     [Space(20)]
     [SerializeField] float moveSpeed = 1;
 
-    void FixedUpdate()
+    void Start()
     {
         handsRB.linearVelocity += Vector2.up * moveSpeed;
     }

@@ -8,6 +8,11 @@ public class MoneyThrowing : MonoBehaviour
     [Tooltip("Turn this option on if you don't want the player to be able to throw money while moving.")]
     [SerializeField] bool onlyThrowMoneyWhenStill = false;
 
+    int moneyCount = 1000;
+
+    public delegate void MoneyDelegate();
+    public event MoneyDelegate OnThrowMoney;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +22,11 @@ public class MoneyThrowing : MonoBehaviour
 
     void ThrowMoney()
     {
+        if(moneyCount == 0)
+        {
+            return;
+        }
+
         if(onlyThrowMoneyWhenStill)
         {
             if(inputDetector.GetXVelocity() != 0)
@@ -26,5 +36,6 @@ public class MoneyThrowing : MonoBehaviour
         }
 
         Debug.Log("Money Thrown");
+        OnThrowMoney?.Invoke();
     }
 }

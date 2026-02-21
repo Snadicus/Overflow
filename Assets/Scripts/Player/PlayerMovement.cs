@@ -71,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
             OnDoubleJump?.Invoke();
         }
     }
+
+    public void ShootUpwards(float jumpStrength)
+    {
+        playerRB.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+    }
     #endregion
 
     #region Collision
