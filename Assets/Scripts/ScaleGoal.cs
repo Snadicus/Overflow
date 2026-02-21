@@ -11,6 +11,7 @@ public class ScaleGoal : MonoBehaviour
     [SerializeField] float jumpSpeed = 1;
 
     GameObject player;
+    bool goalReached = false;
 
     void Start()
     {
@@ -20,6 +21,9 @@ public class ScaleGoal : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
+        if(goalReached)
+            return;
+        
         if(collision.gameObject.GetComponent<MoneyThrowing>() != null)
         {
             player = collision.gameObject;
@@ -37,6 +41,7 @@ public class ScaleGoal : MonoBehaviour
 
     void GoalReached()
     {
+        goalReached = true;
         player.GetComponent<MoneyThrowing>().OnThrowMoney -= GoalReached;
         emptyScale.SetActive(false);
         fullScale.SetActive(true);

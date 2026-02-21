@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] InputDetector inputDetector;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip deathSound;
     [SerializeField] int dangerLayer = 7;
     [SerializeField] string level1SceneName = "JosephScene";
     [Space(20)]
@@ -17,6 +19,7 @@ public class PlayerDeath : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("You died.");
             inputDetector.OnRestart += RestartGame;
+            audioSource.PlayOneShot(deathSound);
             OnDeath?.Invoke();
         }
     }

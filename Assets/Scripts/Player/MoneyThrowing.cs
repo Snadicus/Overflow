@@ -4,6 +4,8 @@ public class MoneyThrowing : MonoBehaviour
 {
     [SerializeField] InputDetector inputDetector;
     [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] coinSounds;
     [Space(20)]
     [Tooltip("Turn this option on if you don't want the player to be able to throw money while moving.")]
     [SerializeField] bool onlyThrowMoneyWhenStill = false;
@@ -36,6 +38,7 @@ public class MoneyThrowing : MonoBehaviour
         }
 
         Debug.Log("Money Thrown");
+        audioSource.PlayOneShot(coinSounds[Random.Range(0, coinSounds.Length)]);
         OnThrowMoney?.Invoke();
     }
 }

@@ -4,6 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] InputDetector inputDetector;
     [SerializeField] Rigidbody2D playerRB;
+    [SerializeField] AudioSource audioSource;
+    [Tooltip("Make sure first sound is footsteps and second is jump")]
+    [SerializeField] AudioClip[] playerSounds;
     [Tooltip("Make sure every floor/platform is set to this layer; otherwise, your jump won't reset after landing.")]
     [SerializeField] int floorLayer = 6;
     [Space(20)]
@@ -41,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRB.linearVelocity = playerDirection;
             FlipCharacter(moveDirection);
+
+            if(!audioSource.isPlaying && jumpState == JumpState.grounded)
+                audioSource.PlayOneShot(playerSounds[0]);
         }
         else
         {
@@ -64,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+        audioSource.PlayOneShot(playerSounds[1]);
         AddToJumpState();
 
         if(jumpState == JumpState.doubleJumping)
