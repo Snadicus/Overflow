@@ -22,10 +22,10 @@ public class CoinSpawn : MonoBehaviour
         // Get the Rigidbody component
         RB = GetComponent<Rigidbody2D>();
 
-        //Generate a random direction vector with values between -1 and 1
+        // Generate a random direction vector with values between -1 and 1
         Vector2 RandomDirection = new Vector2(Random.Range(-1f, 1f), (Random.Range(0f, 1f)));
 
-        //Normalize the vector to ensure consistent magnitude (length of 1)
+        // Normalize the vector to ensure consistent magnitude (length of 1)
         RandomDirection.Normalize();
 
         // Set the velocity based on the random direction and desired speed
