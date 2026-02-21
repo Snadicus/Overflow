@@ -572,7 +572,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   animator: {fileID: 303726847039678367}
-  OnFadeOut:
+  performFadeIn: 0
+  performFadeOut: 0
+  beforeFadeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PanUp
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFadeOut:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5708699953043571150}
