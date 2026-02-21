@@ -9,11 +9,50 @@ public class CoinSpawn : MonoBehaviour
 
     // Rigidbody stuff
     private Rigidbody2D RB;
+
+    bool stopMoving = false;
+    int floorLayer = 6;
+    float timer = 0f;
+    float maxTimer = 1f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         RandomCoinDirection();
+    }
+
+    void Update()
+    {
+        if(timer < maxTimer)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            stopMoving = true;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "End")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if(!stopMoving)
+            return;
+
+        if(collision.gameObject.layer == floorLayer)
+        {
+            Destroy(RB);
+            gameObject.layer = floorLayer;
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
 
     // Method for determining a random X and Y direction for the coins to fly out of the PC

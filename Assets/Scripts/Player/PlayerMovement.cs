@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Make sure first sound is footsteps and second is jump")]
     [SerializeField] AudioClip[] playerSounds;
     [Tooltip("Make sure every floor/platform is set to this layer; otherwise, your jump won't reset after landing.")]
+    [SerializeField] MoneyCount moneyCount;
     [SerializeField] int floorLayer = 6;
     [Space(20)]
     [SerializeField] float moveSpeed = 10;
@@ -64,14 +65,15 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         // Cannot jump again after double jumping
-        if(jumpState == JumpState.doubleJumping)
+        if(jumpState == JumpState.doubleJumping || jumpState == JumpState.cannotJump)
         {
             return;
         }
         
         playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-        audioSource.PlayOneShot(playerSounds[1]);
         AddToJumpState();
+        if(Random.Range(0,2) == 1)
+            audioSource.PlayOneShot(playerSounds[1]);
 
         if(jumpState == JumpState.doubleJumping)
         {
@@ -107,6 +109,11 @@ public class PlayerMovement : MonoBehaviour
         ++timesJumped;
 
         jumpState = (timesJumped >= 2) ? JumpState.doubleJumping : JumpState.jumping;
+
+        if(moneyCount.GetCurrentMoney() <= 0)
+        {
+            jumpState = JumpState.cannotJump;
+        }
     }
 
     void ResetJumpState()
@@ -121,7 +128,8 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded,
         jumping, 
-        doubleJumping
+        doubleJumping,
+        cannotJump
     }
     #endregion
 }

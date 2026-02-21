@@ -4,13 +4,14 @@ public class MoneyThrowing : MonoBehaviour
 {
     [SerializeField] InputDetector inputDetector;
     [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] MoneyCount moneyCount;
+    [SerializeField] MoneyUI moneyUI;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] coinSounds;
     [Space(20)]
     [Tooltip("Turn this option on if you don't want the player to be able to throw money while moving.")]
     [SerializeField] bool onlyThrowMoneyWhenStill = false;
-
-    int moneyCount = 1000;
+    [SerializeField] int amountPerThrow = 20;
 
     public delegate void MoneyDelegate();
     public event MoneyDelegate OnThrowMoney;
@@ -24,7 +25,7 @@ public class MoneyThrowing : MonoBehaviour
 
     void ThrowMoney()
     {
-        if(moneyCount == 0)
+        if(moneyCount.GetCurrentMoney() <= 0)
         {
             return;
         }
@@ -37,7 +38,7 @@ public class MoneyThrowing : MonoBehaviour
             }
         }
 
-        Debug.Log("Money Thrown");
+        moneyUI.SubtractMoneyBy(amountPerThrow);
         audioSource.PlayOneShot(coinSounds[Random.Range(0, coinSounds.Length)]);
         OnThrowMoney?.Invoke();
     }
