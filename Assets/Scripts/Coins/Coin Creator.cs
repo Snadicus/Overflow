@@ -15,6 +15,17 @@ public class CoinCreator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        LocatePlayer();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        SpawnCoin();
+    }
+
+    private void LocatePlayer()
+    {
         // Refrences the Player for PlayerObj, to track location.
         if (PlayerObj == null)
         {
@@ -27,9 +38,8 @@ public class CoinCreator : MonoBehaviour
             Coin = GameObject.Find("Coin");
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void SpawnCoin()
     {
         // Records player location for testing
         Debug.Log("Player Position: X = " + PlayerObj.transform.position.x + " --- Y = " + PlayerObj.transform.position.y);
@@ -40,4 +50,5 @@ public class CoinCreator : MonoBehaviour
 
         Instantiate(Coin, new Vector2(PlayerXPosition, PlayerYPosition), Quaternion.identity);
     }
+
 }
