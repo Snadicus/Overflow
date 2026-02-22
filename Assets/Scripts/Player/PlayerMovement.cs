@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 10;
     [Tooltip("To adjust \"floatiness,\" modify this value alongside Gravity Scale in Rigidbody2D component.")]
     [SerializeField] float jumpHeight = 15;
+    [SerializeField] float doubleJumpHeight = 15;
 
     float moveDirection;
     Vector2 playerDirection;
@@ -70,7 +71,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         
-        playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+        float multiplier = jumpHeight;
+        if(timesJumped > 0)
+            multiplier = doubleJumpHeight;
+        
+        playerRB.AddForce(Vector2.up * multiplier, ForceMode2D.Impulse);
         AddToJumpState();
         if(Random.Range(0,2) == 1)
             audioSource.PlayOneShot(playerSounds[1]);
