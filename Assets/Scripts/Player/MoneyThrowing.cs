@@ -40,5 +40,8 @@ public class MoneyThrowing : MonoBehaviour
         moneyCount.SubtractMoneyBy(amountPerThrow);
         audioSource.PlayOneShot(coinSounds[Random.Range(0, coinSounds.Length)]);
         OnThrowMoney?.Invoke();
+
+        if(moneyCount.GetCurrentMoney() <= 0)
+            moneyCount.ZeroMoney();
     }
 }

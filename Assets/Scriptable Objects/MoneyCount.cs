@@ -20,9 +20,11 @@ public class MoneyCount : ScriptableObject
     {
         currentMoney -= amount;
         OnChangeMoney?.Invoke();
+    }
 
-        if(currentMoney <= 0)
-            OnZeroMoney?.Invoke();
+    public void ZeroMoney() 
+    {
+        OnZeroMoney?.Invoke();
     }
 
     public int GetCurrentMoney()
