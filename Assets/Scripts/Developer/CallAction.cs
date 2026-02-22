@@ -9,10 +9,16 @@ public class CallAction : MonoBehaviour
     void Start()
     {
         inputDetector.OnInteract += StartGame;
+        inputDetector.OnQuit += QuitGame;
     }
 
     void StartGame() 
     {
         basicFunctions.LoadScene(1);
+    }
+
+    void QuitGame() 
+    {
+        Application.Quit();
     }
 }

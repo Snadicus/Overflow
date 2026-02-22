@@ -13,6 +13,7 @@ public class InputDetector : MonoBehaviour
     InputAction jump;
     InputAction interact;
     InputAction restart;
+    InputAction quit;
     //InputAction pause;
 
     // Send over input once received
@@ -20,6 +21,7 @@ public class InputDetector : MonoBehaviour
     public event InputDelegate OnJump;
     public event InputDelegate OnInteract;
     public event InputDelegate OnRestart;
+    public event InputDelegate OnQuit;
     //public event InputDelegate OnPause;
 
     // Override input
@@ -48,6 +50,10 @@ public class InputDetector : MonoBehaviour
         restart = playerControls.Player.Restart;
         restart.Enable();
         restart.performed += Restart;
+
+        quit = playerControls.Player.Quit;
+        quit.Enable();
+        quit.performed += Quit;
 
         //pause = playerControls.Player.Pause;
         //pause.Enable();
@@ -102,6 +108,11 @@ public class InputDetector : MonoBehaviour
     public void Restart(InputAction.CallbackContext context)
     {
         OnRestart?.Invoke();
+    }
+
+    public void Quit(InputAction.CallbackContext context)
+    {
+        OnQuit?.Invoke();
     }
 
     // Notifier for pause button

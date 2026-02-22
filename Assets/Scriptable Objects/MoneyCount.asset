@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aac2f0ff393fd64cbbe77416d6b77ee, type: 3}
   m_Name: MoneyCount
   m_EditorClassIdentifier: Assembly-CSharp::MoneyCount
-  maxMoney: 800
-  currentMoney: 100
+  maxMoney: 1200
+  currentMoney: 950
