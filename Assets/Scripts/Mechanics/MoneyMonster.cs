@@ -23,4 +23,19 @@ public class MoneyMonster : MonoBehaviour
             OnConsumeMoney?.Invoke();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (hasEaten)
+            return;
+
+        if (collision.gameObject.layer == moneyLayer)
+        {
+            Debug.Log("Hit");
+            Destroy(collision.gameObject);
+            moneyCount.SubtractMoneyBy(amountToConsume);
+            hasEaten = true;
+            OnConsumeMoney?.Invoke();
+        }
+    }
 }
