@@ -281,7 +281,6 @@ MonoBehaviour:
   audioSource: {fileID: 7405340691102553883}
   deathSound: {fileID: 8300000, guid: 0f15f1682735b354cb3c6706c4884edc, type: 3}
   dangerLayer: 7
-  level1SceneName: JosephScene
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -552,7 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   counter: {fileID: 2113889326187443378}
   moneyCount: {fileID: 11400000, guid: 4760afbdf9a13d140b33491524b6347a, type: 2}
-  resetMoneyCount: 1
+  resetMoneyCount: 0
 --- !u!1 &5220342226855562076
 GameObject:
   m_ObjectHideFlags: 0
