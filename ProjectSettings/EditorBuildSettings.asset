@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/JosephScene.unity
     guid: f12d88e45f720df41a82ebd4da4d5b2a
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9e3d1f2bc409bb9479cb8cf605d32937
+  - enabled: 1
     path: Assets/Scenes/1_Envy.unity
     guid: 62d61a7635d238949907de951e02c7eb
   - enabled: 1
