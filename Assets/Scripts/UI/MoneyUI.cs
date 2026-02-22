@@ -14,6 +14,8 @@ public class MoneyUI : MonoBehaviour
 
         if(resetMoneyCount)
             moneyCount.ResetMoneyCount();
+
+        DisplayMoney();
     }
 
     void DisplayMoney()
