@@ -5,7 +5,6 @@ public class MoneyThrowing : MonoBehaviour
     [SerializeField] InputDetector inputDetector;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] MoneyCount moneyCount;
-    [SerializeField] MoneyUI moneyUI;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] coinSounds;
     [Space(20)]
@@ -13,8 +12,8 @@ public class MoneyThrowing : MonoBehaviour
     [SerializeField] bool onlyThrowMoneyWhenStill = false;
     [SerializeField] int amountPerThrow = 20;
 
-    public delegate void MoneyDelegate();
-    public event MoneyDelegate OnThrowMoney;
+    public delegate void MoneyThrowDelegate();
+    public event MoneyThrowDelegate OnThrowMoney;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +37,7 @@ public class MoneyThrowing : MonoBehaviour
             }
         }
 
-        moneyUI.SubtractMoneyBy(amountPerThrow);
+        moneyCount.SubtractMoneyBy(amountPerThrow);
         audioSource.PlayOneShot(coinSounds[Random.Range(0, coinSounds.Length)]);
         OnThrowMoney?.Invoke();
     }

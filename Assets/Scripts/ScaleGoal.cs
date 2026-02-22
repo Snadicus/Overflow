@@ -7,6 +7,8 @@ public class ScaleGoal : MonoBehaviour
     [SerializeField] GameObject fullScale;
     [SerializeField] BoxCollider2D thisCollider;
     [SerializeField] FadeScreenAnimator fadeScreenAnimator;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip goalSound;
 
     [SerializeField] float jumpSpeed = 1;
 
@@ -46,6 +48,7 @@ public class ScaleGoal : MonoBehaviour
         emptyScale.SetActive(false);
         fullScale.SetActive(true);
         player.GetComponent<PlayerMovement>().ShootUpwards(jumpSpeed);
+        audioSource.PlayOneShot(goalSound);
         fadeScreenAnimator.FadeOut();
     }
 

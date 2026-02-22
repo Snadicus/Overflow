@@ -9,16 +9,15 @@ public class MoneyUI : MonoBehaviour
     [SerializeField] bool resetMoneyCount;
 
     void Start()
-    {
+    {   
+        moneyCount.OnChangeMoney += DisplayMoney;
+
         if(resetMoneyCount)
             moneyCount.ResetMoneyCount();
-        
-        counter.text = moneyCount.GetCurrentMoneyString();
     }
 
-    public void SubtractMoneyBy(int amount)
+    void DisplayMoney()
     {
-        moneyCount.SubtractMoneyBy(amount);
         counter.text = moneyCount.GetCurrentMoneyString();
     }
 }
