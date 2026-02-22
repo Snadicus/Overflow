@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   handsRB: {fileID: 2264289003688880802}
+  moneyCount: {fileID: 11400000, guid: 4760afbdf9a13d140b33491524b6347a, type: 2}
   moveSpeed: 0.4
 --- !u!1 &7950372903281780378
 GameObject:

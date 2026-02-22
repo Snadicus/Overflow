@@ -8,6 +8,7 @@ public class MoneyCount : ScriptableObject
 
     public delegate void MoneyCountDelegate();
     public event MoneyCountDelegate OnChangeMoney;
+    public event MoneyCountDelegate OnZeroMoney;
 
     public void ResetMoneyCount()
     {
@@ -19,6 +20,9 @@ public class MoneyCount : ScriptableObject
     {
         currentMoney -= amount;
         OnChangeMoney?.Invoke();
+
+        if(currentMoney <= 0)
+            OnZeroMoney?.Invoke();
     }
 
     public int GetCurrentMoney()
