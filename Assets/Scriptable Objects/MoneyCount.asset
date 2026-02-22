@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MoneyCount
   m_EditorClassIdentifier: Assembly-CSharp::MoneyCount
   maxMoney: 800
-  currentMoney: 0
+  currentMoney: 100
