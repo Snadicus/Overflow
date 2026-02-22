@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b4f7edc427cc074fbc47193722b16de
+guid: d6834bc78fef2494199bf16d8deacb66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7290897442385524944
-    second: background-tile_0
+      213: 304344669719683522
+    second: L2-Platform1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background-tile_0
+      name: L2-Platform1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3072
-        height: 2025
+        width: 1008
+        height: 369
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0378ecca76781da90800000000000000
-      internalID: -7290897442385524944
+      spriteID: 2c1ece75ddf393400800000000000000
+      internalID: 304344669719683522
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background-tile_0: -7290897442385524944
+      L2-Platform1_0: 304344669719683522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
