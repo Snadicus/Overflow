@@ -78,13 +78,13 @@ Transform:
   m_GameObject: {fileID: 253083721160291607}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1625147455271448603}
   - {fileID: 8800531209918300453}
-  m_Father: {fileID: 3471175792335524081}
+  m_Father: {fileID: 674462836287145204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6310279754732982312
 SpriteRenderer:
@@ -206,7 +206,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.17985892, y: -0.00067061186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -216,7 +216,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9871316, y: 1.1772722}
   m_EdgeRadius: 0
 --- !u!114 &3400063206330827236
 MonoBehaviour:
@@ -238,8 +238,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 684f7833d708aab409a1b1b21ba0435b, type: 3}
   moneyCount: {fileID: 11400000, guid: 4760afbdf9a13d140b33491524b6347a, type: 2}
   floorLayer: 6
-  moveSpeed: 15
-  jumpHeight: 15
+  moveSpeed: 8
+  jumpHeight: 12
+  doubleJumpHeight: 10
 --- !u!114 &2263481826326812866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +256,6 @@ MonoBehaviour:
   inputDetector: {fileID: 5204170115906972162}
   playerMovement: {fileID: 3400063206330827236}
   moneyCount: {fileID: 11400000, guid: 4760afbdf9a13d140b33491524b6347a, type: 2}
-  moneyUI: {fileID: 5142880237619844756}
   audioSource: {fileID: 7405340691102553883}
   coinSounds:
   - {fileID: 8300000, guid: 6519fc593f58f6940a857f28ae11b279, type: 3}
@@ -349,8 +349,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 674462836287145204}
   - {fileID: 254650632636507262}
-  - {fileID: 4427029301750750372}
   - {fileID: 6953142791974526812}
   - {fileID: 6118002951585809393}
   m_Father: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 1625147455271448603}
   - component: {fileID: 5778239543099123569}
   m_Layer: 0
-  m_Name: Stickman_0
+  m_Name: Scrooge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -579,7 +579,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4427029301750750372}
@@ -633,7 +633,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2634816806227739618, guid: 7d450d888104fdd40b1c610922b4d275, type: 3}
+  m_Sprite: {fileID: 1032695432115984835, guid: f39b5872d9d0ed54aabcec3244bc23e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1014,3 +1014,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8399158782806444531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674462836287145204}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674462836287145204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399158782806444531}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4427029301750750372}
+  m_Father: {fileID: 3471175792335524081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

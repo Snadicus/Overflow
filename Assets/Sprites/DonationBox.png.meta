@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: c12379642e7d6664c84da7bf69e423e4
+guid: f6b0d974d1478c54d82021a427e80fb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2962113466680581256
-    second: evil-hands_0
-  - first:
-      213: -4646956402344411885
-    second: evil-hands_1
-  - first:
-      213: -942234223721590336
-    second: evil-hands_2
-  - first:
-      213: 4569755319454974283
-    second: evil-hands_3
+      213: 865686847754789843
+    second: DonationBox_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: evil-hands_0
+      name: DonationBox_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 194
         y: 0
-        width: 1472
-        height: 1526
+        width: 1537
+        height: 1278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88c95e5018a8b1920800000000000000
-      internalID: 2962113466680581256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: evil-hands_1
-      rect:
-        serializedVersion: 2
-        x: 1466
-        y: 140
-        width: 21
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31db88fc5c1b28fb0800000000000000
-      internalID: -4646956402344411885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: evil-hands_2
-      rect:
-        serializedVersion: 2
-        x: 1486
-        y: 152
-        width: 22
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c1dbd737f28ce2f0800000000000000
-      internalID: -942234223721590336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: evil-hands_3
-      rect:
-        serializedVersion: 2
-        x: 1454
-        y: 134
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b41c09e50480b6f30800000000000000
-      internalID: 4569755319454974283
+      spriteID: 3d3e627f999830c00800000000000000
+      internalID: 865686847754789843
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      evil-hands_0: 2962113466680581256
-      evil-hands_1: -4646956402344411885
-      evil-hands_2: -942234223721590336
-      evil-hands_3: 4569755319454974283
+      DonationBox_0: 865686847754789843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
