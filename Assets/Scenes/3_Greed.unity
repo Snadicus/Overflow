@@ -353,11 +353,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 34
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 1
-  orthographic size: 5.1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1285,7 +1285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &981676016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,10 +1628,10 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 34
-    OrthographicSize: 5.1
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FieldOfView: 40
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -2938,6 +2938,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ===PLAYER===
       objectReference: {fileID: 0}
+    - target: {fileID: 2244521478995470779, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
+      propertyPath: m_Color.b
+      value: 0.130162
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244521478995470779, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244521478995470779, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
+      propertyPath: m_Color.r
+      value: 0.25407553
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244521478995470779, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 6c17812a9c8f46d4995c2edd966ebbf8, type: 3}
     - target: {fileID: 3471175792335524081, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -2982,10 +2998,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scrooge
       objectReference: {fileID: 0}
+    - target: {fileID: 6368953340749458027, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6674394766126530066, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -557.14496
       objectReference: {fileID: 0}
+    - target: {fileID: 8749717237187671674, guid: ac58be1462597dd41b7f54488b80a483, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5670732621190257608, guid: 6c17812a9c8f46d4995c2edd966ebbf8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
