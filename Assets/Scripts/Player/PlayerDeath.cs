@@ -8,7 +8,6 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip deathSound;
     [SerializeField] int dangerLayer = 7;
-    [SerializeField] string level1SceneName = "JosephScene";
     [Space(20)]
     [SerializeField] UnityEvent OnDeath;
 
@@ -26,7 +25,7 @@ public class PlayerDeath : MonoBehaviour
 
     void RestartGame()
     {
-        SceneManager.LoadScene(level1SceneName);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
 }
