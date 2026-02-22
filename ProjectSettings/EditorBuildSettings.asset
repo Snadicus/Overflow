@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/JosephScene.unity
+    guid: f12d88e45f720df41a82ebd4da4d5b2a
+  - enabled: 1
+    path: Assets/Scenes/Pride.unity
+    guid: cea5f995f07d3094a9ac0b1711b9ec22
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
