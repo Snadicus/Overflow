@@ -237,6 +237,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ec61d2888c06844faef060e557da320, type: 3}
   - {fileID: 8300000, guid: 684f7833d708aab409a1b1b21ba0435b, type: 3}
   moneyCount: {fileID: 11400000, guid: 4760afbdf9a13d140b33491524b6347a, type: 2}
+  animator: {fileID: 6302328282375230971}
   floorLayer: 6
   moveSpeed: 8
   jumpHeight: 12
@@ -562,6 +563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625147455271448603}
   - component: {fileID: 5778239543099123569}
+  - component: {fileID: 6302328282375230971}
   m_Layer: 0
   m_Name: Scrooge
   m_TagString: Untagged
@@ -633,7 +635,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1032695432115984835, guid: f39b5872d9d0ed54aabcec3244bc23e3, type: 3}
+  m_Sprite: {fileID: 8649617607794350094, guid: 71f1aad5d8f4493418de28a396ed80cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -643,6 +645,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &6302328282375230971
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220342226855562076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dec8c18db21d14a4b9887a662c2d50d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5671111463601714899
 GameObject:
   m_ObjectHideFlags: 0

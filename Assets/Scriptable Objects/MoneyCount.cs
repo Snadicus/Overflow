@@ -4,7 +4,7 @@ using UnityEngine;
 public class MoneyCount : ScriptableObject
 {
     [SerializeField] int maxMoney = 500;
-    int currentMoney = 500;
+    [SerializeField] int currentMoney = 0;
 
     public delegate void MoneyCountDelegate();
     public event MoneyCountDelegate OnChangeMoney;

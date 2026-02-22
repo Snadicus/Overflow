@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip[] playerSounds;
     [Tooltip("Make sure every floor/platform is set to this layer; otherwise, your jump won't reset after landing.")]
     [SerializeField] MoneyCount moneyCount;
+    [SerializeField] Animator animator;
     [SerializeField] int floorLayer = 6;
     [Space(20)]
     [SerializeField] float moveSpeed = 10;
@@ -47,12 +48,15 @@ public class PlayerMovement : MonoBehaviour
             playerRB.linearVelocity = playerDirection;
             FlipCharacter(moveDirection);
 
+            animator.SetBool("isWalking", true);
+
             if(!audioSource.isPlaying && jumpState == JumpState.grounded)
                 audioSource.PlayOneShot(playerSounds[0]);
         }
         else
         {
             playerRB.linearVelocity = new Vector2(0f, playerRB.linearVelocity.y);
+            animator.SetBool("isWalking", false);
         }
     }
 

@@ -9,6 +9,7 @@ public class CrackedWalls : MonoBehaviour
     private bool CanBeHit = true;
 
     // Events
+    [SerializeField] private GameObject rockSprite;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip HitSounds;
     [SerializeField] private AudioClip DestroySounds;
@@ -66,7 +67,8 @@ public class CrackedWalls : MonoBehaviour
                 audioSource.PlayOneShot(DestroySounds);
             }
 
-            Destroy(gameObject);
+            Destroy(gameObject.GetComponent<BoxCollider2D>());
+            rockSprite.SetActive(false);
         }
     }
 
